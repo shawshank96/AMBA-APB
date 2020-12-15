@@ -1,9 +1,14 @@
+/* ----------------------------------------------------------------------------
+Author: Shashank Shivashankar
+Date: 12/10/2020
+---------------------------------------------------------------------------- */
+
 `timescale 1ns/1ps
 
 module apb
 #(
-    ADDRWIDTH 8
-    DATAWIDTH 32
+    ADDRWIDTH = 8,
+    DATAWIDTH = 32
 )
 (
     input                        clk,
@@ -19,6 +24,7 @@ module apb
 
 logic [DATAWIDTH-1:0] mem [256];
 logic [1:0] apb_st; 
+    
 parameter IDLE = 0;
 parameter SETUP = 1;
 parameter ACCESS = 2;
